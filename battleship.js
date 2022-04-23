@@ -103,6 +103,12 @@ var controller = {
             var hit = model.fire(location);
             if(hit && model.shipsSunk === model.numShips){
                 view.displayMessage("You sank all my battleships, in " + this.guesses + " guesses");
+                var newGame = confirm("Do you want to start new game?");
+                if(newGame){
+                    alert("Thats my boiiii");
+                } else {
+                    alert("You bastard");
+                }
             }
         }
 
@@ -135,8 +141,8 @@ function init() {
     fireButton.onclick = handleFireButton;
     var guessInput = document.getElementById("guessInput");
    guessInput.onkeypress= handleKeyPress;
-
    model.generateShipLocations();
+   confirm("are you ready for new game?");
 }
 
 function handleFireButton () {
